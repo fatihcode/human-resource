@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import App from './components/App';
 import { Provider } from 'react-redux'
 import { createStore, applyMiddleware } from 'redux'
-import reducer from './reducer/reducer'
+import reducer from './store/reducer'
 import promise from 'redux-promise-middleware'
 import thunk from 'redux-thunk'
 import logger from 'redux-logger'

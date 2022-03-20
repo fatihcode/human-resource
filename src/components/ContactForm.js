@@ -34,12 +34,7 @@ export default function ContactForm() {
             </Row>
 
             <Form.Group className="mb-3">
-                <Form.Check
-                    required
-                    label="Agree to terms and conditions"
-                    // feedback="You must agree before submitting."
-                    feedbackType="invalid"
-                />
+                <Form.Check required label="Agree to terms and conditions" feedbackType="invalid" />
             </Form.Group>
 
             <Button type="submit">Submit form</Button>

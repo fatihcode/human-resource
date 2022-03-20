@@ -20,11 +20,7 @@ export const Header = (props) => {
 
                         <Form.Group >
                             <InputGroup>
-                                <FormControl
-                                    type="search"
-                                    placeholder="Search"
-                                    aria-label="Search"
-                                />
+                                <FormControl type="search" placeholder="Search" aria-label="Search" />
 
                                 <InputGroup.Text id="inputGroupPrepend">Search</InputGroup.Text>
                             </InputGroup>
