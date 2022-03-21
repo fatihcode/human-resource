@@ -4,6 +4,7 @@ export default function About() {
     return (
         <div>
             <h2>About</h2>
+            <hr />
 
             <div>
                 İnsan doğasına uygun İK çözümlerini prensip edinen firmamızın sağladığı hizmetler, uzun yıllar elde edilen bilgi birikimi ve deneyimin bir sonucudur. Bu hizmetler, insan kaynakları gelişim trendleri ışığında hizmet verilecek kuruma/ kitleye özelleştirilerek verilmektedir.

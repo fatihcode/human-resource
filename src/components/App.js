@@ -2,9 +2,9 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Container } from 'react-bootstrap';
 import Home from './Home';
 import About from './About';
-import Contact from './Contact';
+import Contact from './contact/Contact';
 import Header from './Header';
-import Candidates from './Candidates';
+import Candidates from './candidates/Candidates';
 
 
 function App() {

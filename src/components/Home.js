@@ -1,19 +1,21 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Carousel } from 'react-bootstrap'
 import CarouselItem from './CarouselItem'
 
+import { useDispatch } from 'react-redux'
 
-const INITIAL_STATE = [
-   { title: "First slide label", url: "artboard_1.jpg", caption: "Nulla vitae elit libero, a pharetra augue mollis interdum." },
-   { title: "Second slide label", url: "artboard_2.jpg", caption: "Lorem ipsum dolor sit amet, consectetur adipiscing elit." },
-   { title: "Third slide label", url: "artboard_3.jpg", caption: "Nulla vitae elit libero, a pharetra augue mollis interdum." },
-   { title: "Fourth slide label", url: "artboard_4.jpg", caption: "Praesent commodo cursus magna, vel scelerisque nisl consectetur." }
-]
+// const INITIAL_STATE = [
+//    { title: "First slide label", url: "artboard_1.jpg", caption: "Nulla vitae elit libero, a pharetra augue mollis interdum." },
+//    { title: "Second slide label", url: "artboard_2.jpg", caption: "Lorem ipsum dolor sit amet, consectetur adipiscing elit." },
+//    { title: "Third slide label", url: "artboard_3.jpg", caption: "Nulla vitae elit libero, a pharetra augue mollis interdum." },
+//    { title: "Fourth slide label", url: "artboard_4.jpg", caption: "Praesent commodo cursus magna, vel scelerisque nisl consectetur." }
+// ]
 
 
 export default function Home() {
 
-   const [slider, setSlider] = useState(INITIAL_STATE)
+   // const [slider, setSlider] = useState(INITIAL_STATE)
+
 
    return (
 
