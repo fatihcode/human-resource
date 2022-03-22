@@ -1,13 +1,14 @@
 import React from 'react'
 
-export default function Contex() {
+export default function Contex({ review }) {
+
 
     return (
         <div>
-            <h1>Contact Contex</h1>
-
-
-
+            <h3>{review.title}</h3>
+            <h5 className="text-muted">{review.email}</h5>
+            <p>{review.message}</p>
+            <hr />
         </div>
     )
 }

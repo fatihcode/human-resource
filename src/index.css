@@ -7,11 +7,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
 th {
   text-align: center !important;
 }
@@ -20,10 +15,10 @@ th:last-child {
   width: 10% !important;
 }
 
-.card-caption{
- display: flex; 
- align-items: center;
- justify-content: space-between;
- background-color: burlywood;
- padding:5px 10px;
+.card-caption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: burlywood;
+  padding: 5px 10px;
 }

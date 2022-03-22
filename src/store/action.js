@@ -13,11 +13,11 @@ export function getData() {
 }
 
 
-export function getDetail(payload) {
+export function postReview(payload) {
     return dispatch => {
 
         dispatch({
-            type: "GET_DETAIL",
+            type: "POST_REVIEW",
             payload
         })
     }

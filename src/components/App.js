@@ -7,7 +7,7 @@ import Header from './Header';
 import Candidates from './candidates/Candidates';
 
 
-function App() {
+export default function App() {
   return (
 
     <Container>
@@ -29,5 +29,3 @@ function App() {
 
   );
 }
-
-export default App;

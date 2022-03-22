@@ -11,16 +11,17 @@ export default function Detail() {
 
   let param = useParams()
 
-  const user = persons.filter(item => item.id == param.id)
+  const user = persons.filter(item => item.id == param.id).pop()
 
-  const { name, username, email, address, phone, website, company } = user[0]
+  console.log(user);
+
+  const { name, username, email, address, phone, website, company } = user
 
   return (
     <div>
       <div className="card-caption">
         <h1>{name}</h1>
-        
-        <Link to="/candidates" ><CloseButton></CloseButton></Link>
+        <Link to="/candidates" ><CloseButton /></Link>
       </div>
 
       <table>
