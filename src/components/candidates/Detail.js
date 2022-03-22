@@ -1,14 +1,27 @@
 import React from 'react'
+import { CloseButton } from 'react-bootstrap';
+import { useSelector } from 'react-redux';
+import { useParams } from 'react-router';
+import { Link } from 'react-router-dom';
 
-export default function Detail(props) {
 
-  console.log(props);
+export default function Detail() {
 
-  const { name, username, email, address, phone, website, company } = props.detail
+  const persons = useSelector(state => state.candidates)
+
+  let param = useParams()
+
+  const user = persons.filter(item => item.id == param.id)
+
+  const { name, username, email, address, phone, website, company } = user[0]
 
   return (
     <div>
-      <h1>{name}</h1>
+      <div className="card-caption">
+        <h1>{name}</h1>
+        
+        <Link to="/candidates" ><CloseButton></CloseButton></Link>
+      </div>
 
       <table>
         <tbody>
@@ -41,9 +54,10 @@ export default function Detail(props) {
             <td>catchPhrase</td>
             <td>{company.catchPhrase}</td>
           </tr>
-          <td>bs</td>
-          <td>{company.bs}</td>
-
+          <tr>
+            <td>bs</td>
+            <td>{company.bs}</td>
+          </tr>
         </tbody>
       </table>
 

@@ -14,14 +14,12 @@ export const Header = (props) => {
 
                     <Nav className="me-auto w-100 d-flex justify-content-end">
 
-                        <Nav.Link href="candidates">Candidates</Nav.Link>
-                        <Nav.Link href="contact">Contact</Nav.Link>
-                        <Nav.Link href="about">About Us</Nav.Link>
-
+                        <Nav.Link href="/candidates">Candidates</Nav.Link>
+                        <Nav.Link href="/contact">Contact</Nav.Link>
+                        <Nav.Link href="/about">About Us</Nav.Link>
 
 
                     </Nav>
-
 
                 </Navbar.Collapse>
 

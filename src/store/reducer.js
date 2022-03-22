@@ -2,7 +2,7 @@ const INITIAL_STATE = {
     candidates: [],
     detail: {},
     error: "",
-    fetching: false,
+    fetching: true,
     fetched: false
 }
 
