@@ -5,12 +5,10 @@ import ContactForm from './ContactForm'
 import Contex from './Contex'
 
 
-
 export default function Contact() {
 
     const review = useSelector(state => state.review)
 
-    console.log(review);
     return (
         <section className="page-section">
             <Container>
@@ -22,8 +20,8 @@ export default function Contact() {
                 <ContactForm />
 
                 <hr />
- 
-                {review.reverse().map((item, i) => <Contex key={i} review={item} />)}
+
+                {review.map((item, i) => <Contex key={i} review={item} />)}
             </Container>
         </section>
     )

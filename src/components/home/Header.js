@@ -15,9 +15,9 @@ export const Header = () => {
                 <div className="collapse navbar-collapse" id="navbarResponsive">
                     <ul className="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
 
-                        <li className="nav-item"><a href="/about" className="nav-link">About</a></li>
                         <li className="nav-item"><a href="/candidates" className="nav-link">Candidates</a></li>
                         <li className="nav-item"><a href="/contact" className="nav-link">Contact</a></li>
+                        <li className="nav-item"><a href="/aboutus" className="nav-link">About</a></li>
 
                     </ul>
                 </div>

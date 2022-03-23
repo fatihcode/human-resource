@@ -19,7 +19,7 @@ export default function Detail() {
     <div class="portfolio-modal mt-5">
 
           <div className="card-caption">
-            <h1 class="text-uppercase">{name}</h1>
+            <h1 className="text-uppercase">{name}</h1>
            <div className="close"> <Link to="/candidates"><CloseButton /></Link></div>
           </div>
 

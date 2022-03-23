@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getData } from '../../store/action'
-import { Form, FormControl, Table, Spinner, Container } from 'react-bootstrap';
+import { FormControl, Table, Spinner, Container } from 'react-bootstrap';
 import Detail from './Detail';
 import { Routes, Route, NavLink } from 'react-router-dom'
+
+
 
 export default function Candidates() {
 
@@ -15,22 +17,9 @@ export default function Candidates() {
 
     const [value, setValue] = useState("")
 
-    const { candidates, error, fetching, fetched } = state
-
-    // let filterCandidates = [...candidates]
-
-    //    filterCandidates = candidates.filter(item => item.name.includes(value.toLowerCase()) || item.phone.includes(value.toLowerCase()))
-
+    const { candidates, error, fetching } = state
 
     const filterCandidates = candidates.filter(item => item.name.toLowerCase().includes(value.toLowerCase()) || item.phone.toLowerCase().includes(value.toLowerCase()))
-
-    //   const filterCandidates = candidates.filter(
-    //     item => {
-    //         return item.name.toLowerCase().indexOf(value.toLowerCase()) !==-1
-    //             || item.phone.toLowerCase().indexOf(value.toLowerCase()) !==-1
-    //     }
-    // )
-
 
     return (
         <section className="page-section">

@@ -1,8 +1,6 @@
-import React, { useState, useEffect } from 'react'
 import { Carousel, Container } from 'react-bootstrap'
 import CarouselItem from './CarouselItem'
 
-import { useDispatch } from 'react-redux'
 
 // const INITIAL_STATE = [
 //    { title: "First slide label", url: "artboard_1.jpg", caption: "Nulla vitae elit libero, a pharetra augue mollis interdum." },
@@ -15,7 +13,6 @@ import { useDispatch } from 'react-redux'
 export default function Home() {
 
    // const [slider, setSlider] = useState(INITIAL_STATE)
-
 
    return (
       <>

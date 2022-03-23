@@ -14,7 +14,7 @@ export default function About() {
                 <ul className="timeline">
 
                     <li>
-                        <div className="timeline-image"><img className="rounded-circle img-fluid" src="../about/1.jpg" alt="..." /></div>
+                        <div className="timeline-image"><img className="rounded-circle img-fluid" src="./about/1.jpg" alt="..." /></div>
                         <div className="timeline-panel">
                             <div className="timeline-heading">
 
@@ -25,7 +25,7 @@ export default function About() {
                     </li>
 
                     <li className="timeline-inverted">
-                        <div className="timeline-image"><img className="rounded-circle img-fluid" src="../about/2.jpg" alt="..." /></div>
+                        <div className="timeline-image"><img className="rounded-circle img-fluid" src="./about/2.jpg" alt="..." /></div>
                         <div className="timeline-panel">
                             <div className="timeline-heading">
 
@@ -36,7 +36,7 @@ export default function About() {
                     </li>
 
                     <li>
-                        <div className="timeline-image"><img className="rounded-circle img-fluid" src="../about/3.jpg" alt="..." /></div>
+                        <div className="timeline-image"><img className="rounded-circle img-fluid" src="./about/3.jpg" alt="..." /></div>
                         <div className="timeline-panel">
                             <div className="timeline-heading">
 
@@ -47,7 +47,7 @@ export default function About() {
                     </li>
 
                     <li className="timeline-inverted">
-                        <div className="timeline-image"><img className="rounded-circle img-fluid" src="../about/4.jpg" alt="..." /></div>
+                        <div className="timeline-image"><img className="rounded-circle img-fluid" src="./about/4.jpg" alt="..." /></div>
                         <div className="timeline-panel">
                             <div className="timeline-heading">
 

@@ -8,7 +8,7 @@ export default function Footer() {
 
                 <div className="row justify-content-between">
 
-                    <div className="col-lg-3 text-lg-start">Copyright &copy; Your Website 2021</div>
+                    <div className="col-lg-3 text-lg-start">Copyright &copy; 2021</div>
 
                     <div className="col-lg-3 my-3 my-lg-0">
                         <a className="btn btn-dark btn-social mx-2" href="#!"><i className="fab fa-twitter"></i></a>

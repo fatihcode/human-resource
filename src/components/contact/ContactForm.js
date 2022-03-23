@@ -4,7 +4,6 @@ import { useDispatch } from 'react-redux';
 import { postReview } from '../../store/action';
 
 
-
 export default function ContactForm() {
 
     const dispatch = useDispatch()
@@ -12,9 +11,7 @@ export default function ContactForm() {
     const [email, setEmail] = useState()
     const [title, setTitle] = useState()
     const [message, setMessage] = useState()
-
     const [validated, setValidated] = useState(false);
-
 
     const handleSubmit = (e) => {
         const form = e.currentTarget;
@@ -29,11 +26,6 @@ export default function ContactForm() {
 
             dispatch(postReview({ email, title, message }))
         }
-
-        setEmail("")
-        setTitle("")
-        setMessage("")
-
     };
 
     return (
@@ -42,13 +34,13 @@ export default function ContactForm() {
             <Row className="mb-3">
 
                 <Form.Group className="mb-3" as={Col} md="6" controlId="validationCustom01">
-                    <Form.Label>Email Adress</Form.Label>
-                    <Form.Control onChange={(e) => setEmail(e.target.value)} defaultValue={email} required type="email" placeholder="name@example.com" />
+                    <Form.Label>Title</Form.Label>
+                    <Form.Control onChange={(e) => setTitle(e.target.value)} required type="text" placeholder="Title" />
                 </Form.Group>
 
                 <Form.Group className="mb-3" as={Col} md="6" controlId="validationCustom01">
-                    <Form.Label>Title</Form.Label>
-                    <Form.Control onChange={(e) => setTitle(e.target.value)} required type="text" placeholder="Title" />
+                    <Form.Label>Email Adress</Form.Label>
+                    <Form.Control onChange={(e) => setEmail(e.target.value)} defaultValue={email} required type="email" placeholder="name@example.com" />
                 </Form.Group>
 
                 <Form.Group as={Col} md="12" controlId="validationCustom02">
@@ -57,10 +49,6 @@ export default function ContactForm() {
                 </Form.Group>
 
             </Row>
-
-            <Form.Group className="mb-3">
-                <Form.Check required label="Agree to terms and conditions" feedbackType="invalid" />
-            </Form.Group>
 
             <Button type="submit">Submit form</Button>
         </Form>
