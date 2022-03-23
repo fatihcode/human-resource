@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/human-resource/static/css/main.c35d9b6e.css",
+    "main.js": "/human-resource/static/js/main.1a09f9cd.js",
+    "static/media/artboard_3.jpg": "/human-resource/static/media/artboard_3.3d51cecb068b8ce15560.jpg",
+    "index.html": "/human-resource/index.html",
+    "static/media/right.svg": "/human-resource/static/media/right.e51fb5746f945d8b0635.svg",
+    "main.c35d9b6e.css.map": "/human-resource/static/css/main.c35d9b6e.css.map",
+    "main.1a09f9cd.js.map": "/human-resource/static/js/main.1a09f9cd.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c35d9b6e.css",
+    "static/js/main.1a09f9cd.js"
+  ]
+}
