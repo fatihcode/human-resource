@@ -1,10 +1,13 @@
-import { review } from "../config/data"
+import { brand, review, slideItem, team } from "../config/data"
 
 const INITIAL_STATE = {
     candidates: [],
     error: "",
     fetching: true,
-    review: review
+    review,
+    team,
+    brand,
+    slideItem
 }
 
 export default (state = INITIAL_STATE, { type, payload }) => {

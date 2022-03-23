@@ -1,3 +1,5 @@
+export const API_URL = "https://jsonplaceholder.typicode.com/users"
+
 export const review = [
     {
         email: "joseph@teleworm.us",

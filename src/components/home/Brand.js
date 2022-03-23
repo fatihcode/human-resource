@@ -1,7 +1,10 @@
 import React from 'react'
-import { brand } from '../../config/data'
+import { useSelector } from 'react-redux'
 
 export default function Brand() {
+
+    const brand = useSelector(state => state.brand)
+
     return (
 
         <div className="py-5">
@@ -19,7 +22,6 @@ export default function Brand() {
                             </a>
                         </div>
                     ))}
-
 
                 </div>
             </div>

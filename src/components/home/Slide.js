@@ -2,10 +2,13 @@ import React from 'react';
 import Slider from 'react-animated-slider';
 import 'react-animated-slider/build/horizontal.css';
 import './slider.css';
-import { slideItem } from '../../config/data';
+import { useSelector } from 'react-redux'
 
 
 export default function Slide() {
+    
+    const slideItem = useSelector(state => state.slideItem)
+
     return (
         <Slider className="slider-wrapper" autoplay={3000}>
             {slideItem.map((item, index) => (

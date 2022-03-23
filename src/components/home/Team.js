@@ -1,9 +1,12 @@
 import React from 'react'
 import { Container } from 'react-bootstrap'
-import { team } from '../../config/data'
+import { useSelector } from 'react-redux'
 
 
 export default function Team() {
+
+    const team = useSelector(state => state.team)
+
     return (
         <section className="page-section bg-light" id="team">
             <Container>

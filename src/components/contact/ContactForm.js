@@ -29,7 +29,7 @@ export default function ContactForm() {
     };
 
     return (
-        <Form className="px-5" noValidate validated={validated} onSubmit={handleSubmit}>
+        <Form className="px-lg-5 px-1 mb-5" noValidate validated={validated} onSubmit={handleSubmit}>
 
             <Row className="mb-3">
 
@@ -51,6 +51,7 @@ export default function ContactForm() {
             </Row>
 
             <Button type="submit">Submit form</Button>
+            {/* <hr /> */}
         </Form>
     );
 }
