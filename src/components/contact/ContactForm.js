@@ -19,7 +19,7 @@ export default function ContactForm() {
     const handleSubmit = (e) => {
         const form = e.currentTarget;
         e.preventDefault();
-        
+
         if (form.checkValidity() === false) {
             e.stopPropagation();
         }
@@ -27,27 +27,31 @@ export default function ContactForm() {
 
         if (email && title && message) {
 
-            dispatch(postReview({ id: 9, email, title, message }))
+            dispatch(postReview({ email, title, message }))
         }
+
+        setEmail("")
+        setTitle("")
+        setMessage("")
 
     };
 
     return (
-        <Form noValidate validated={validated} onSubmit={handleSubmit}>
+        <Form className="px-5" noValidate validated={validated} onSubmit={handleSubmit}>
 
             <Row className="mb-3">
 
-                <Form.Group className="mb-3" as={Col} md="4" controlId="validationCustom01">
+                <Form.Group className="mb-3" as={Col} md="6" controlId="validationCustom01">
                     <Form.Label>Email Adress</Form.Label>
-                    <Form.Control onChange={(e) => setEmail(e.target.value)} required type="email" placeholder="name@example.com" />
+                    <Form.Control onChange={(e) => setEmail(e.target.value)} defaultValue={email} required type="email" placeholder="name@example.com" />
                 </Form.Group>
 
-                <Form.Group className="mb-3" as={Col} md="4" controlId="validationCustom01">
+                <Form.Group className="mb-3" as={Col} md="6" controlId="validationCustom01">
                     <Form.Label>Title</Form.Label>
                     <Form.Control onChange={(e) => setTitle(e.target.value)} required type="text" placeholder="Title" />
                 </Form.Group>
 
-                <Form.Group as={Col} md="4" controlId="validationCustom02">
+                <Form.Group as={Col} md="12" controlId="validationCustom02">
                     <Form.Label>Reviews</Form.Label>
                     <Form.Control onChange={(e) => setMessage(e.target.value)} rows={3} required as="textarea" placeholder="Reviews" />
                 </Form.Group>

@@ -1,30 +1,28 @@
-import { Container, FormControl, Nav, Navbar, Form, Button, InputGroup } from "react-bootstrap"
 import { NavLink } from "react-router-dom"
+// import logo from '../navbar-logo.svg'
 
-
-
-export const Header = (props) => {
+export const Header = () => {
     return (
-        <Navbar bg="dark" variant="dark" expand="md" className="mb-4">
-            <Container>
-                <Navbar.Brand href="/">Human Resources</Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <nav className="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+            <div className="container">
+                <a className="navbar-brand" href="/">
+                    <img src="../navbar-logo.svg" alt="..." />
+                </a>
+                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i className="fas fa-bars ms-1"></i>
+                </button>
+                <div className="collapse navbar-collapse" id="navbarResponsive">
+                    <ul className="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
 
-                <Navbar.Collapse id="basic-navbar-nav">
+                        <li className="nav-item"><a href="/about" className="nav-link">About</a></li>
+                        <li className="nav-item"><a href="/candidates" className="nav-link">Candidates</a></li>
+                        <li className="nav-item"><a href="/contact" className="nav-link">Contact</a></li>
 
-                    <Nav className="me-auto w-100 d-flex justify-content-end">
-
-                        <Nav.Link href="/candidates">Candidates</Nav.Link>
-                        <Nav.Link href="/contact">Contact</Nav.Link>
-                        <Nav.Link href="/about">About Us</Nav.Link>
-
-
-                    </Nav>
-
-                </Navbar.Collapse>
-
-            </Container>
-        </Navbar>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     )
 }
 

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getData } from '../../store/action'
-import { Form, FormControl, InputGroup, Table, Button, Spinner } from 'react-bootstrap';
+import { Form, FormControl, Table, Spinner, Container } from 'react-bootstrap';
 import Detail from './Detail';
 import { Routes, Route, NavLink } from 'react-router-dom'
 
@@ -32,65 +32,67 @@ export default function Candidates() {
     // )
 
 
-
     return (
-        <div>
-            <h2>Candidates</h2>
-            <hr />
-            <Form.Group >
-                <InputGroup>
-                    <FormControl onChange={(e) => setValue(e.target.value)} type="search" placeholder="Search" aria-label="Search" />
-                    <InputGroup.Text id="inputGroupPrepend">Search</InputGroup.Text>
-                </InputGroup>
-            </Form.Group>
+        <section className="page-section">
 
-            <Table striped bordered hover>
-                <thead>
-                    <tr>
-                        <th>No</th>
-                        <th>First Name</th>
-                        <th>Phone Number</th>
-                        <th>Detail</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {fetching
-                        ? <tr>
-                            <td colSpan={4} style={{ "textAlign": "center" }}>
-                                <Spinner animation="border" />
-                            </td>
+            <Container>
+
+                <div className="text-center">
+                    <h2 className="section-heading text-uppercase">Candidates</h2>
+                    <h3 className="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                </div>
+
+                <FormControl onChange={(e) => setValue(e.target.value)} type="search" placeholder="Search" aria-label="Search" />
+
+                <Table striped bordered hover>
+
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>First Name</th>
+                            <th>Phone Number</th>
+                            <th>Detail</th>
                         </tr>
-                        : error
-                            ? <tr>
-                                <th colSpan={4} style={{ "textAlign": "center" }}>
-                                    {error}
-                                </th>
-                            </tr>
+                    </thead>
 
-                            : filterCandidates.map((item, i) => (
-                                <tr key={i}>
-                                    <th>{i}</th>
-                                    <td>{item.name}</td>
-                                    <td>{item.phone}</td>
-                                    <th>
-                                        <NavLink
-                                            to={"detail/" + item.id}
-                                            type="button"
-                                            className={({ isActive }) => isActive ? "btn btn-sm btn-secondary" : "btn btn-sm btn-outline-secondary"}
-                                        >Detail</NavLink>
+                    <tbody>
+                        {fetching
+                            ? <tr>
+                                <td colSpan={4} style={{ "textAlign": "center" }}>
+                                    <Spinner animation="border" />
+                                </td>
+                            </tr>
+                            : error
+                                ? <tr>
+                                    <th colSpan={4} style={{ "textAlign": "center" }}>
+                                        {error}
                                     </th>
                                 </tr>
-                            ))
-                    }
-                </tbody>
-            </Table>
 
-            <hr />
+                                : filterCandidates.map((item, i) => (
+                                    <tr key={i}>
+                                        <th>{i}</th>
+                                        <td>{item.name}</td>
+                                        <td>{item.phone}</td>
+                                        <th>
+                                            <NavLink
+                                                to={"detail/" + item.id}
+                                                type="button"
+                                                className={({ isActive }) => isActive ? "btn btn-sm btn-outline-primary" : "btn btn-sm btn-primary"}
+                                            >Detail</NavLink>
+                                        </th>
+                                    </tr>
+                                ))
+                        }
+                    </tbody>
 
-            <Routes>
-                <Route path="detail/:id" element={<Detail />} />
-            </Routes>
+                </Table>
 
-        </div>
+                <Routes>
+                    <Route path="detail/:id" element={<Detail />} />
+                </Routes>
+
+            </Container>
+        </section>
     )
 }

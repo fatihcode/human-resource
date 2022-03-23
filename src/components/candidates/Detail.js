@@ -1,5 +1,5 @@
 import React from 'react'
-import { CloseButton } from 'react-bootstrap';
+import { CloseButton, Table } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
@@ -13,55 +13,44 @@ export default function Detail() {
 
   const user = persons.filter(item => item.id == param.id).pop()
 
-  console.log(user);
-
   const { name, username, email, address, phone, website, company } = user
 
   return (
-    <div>
-      <div className="card-caption">
-        <h1>{name}</h1>
-        <Link to="/candidates" ><CloseButton /></Link>
-      </div>
+    <div class="portfolio-modal mt-5">
 
-      <table>
-        <tbody>
-          <tr>
-            <td>username</td>
-            <td>{username}</td>
-          </tr>
-          <tr>
-            <td>email</td>
-            <td>{email}</td>
-          </tr>
-          <tr>
-            <td>phone</td>
-            <td>{phone}</td>
-          </tr>
-          <tr>
-            <td>address</td>
-            <td>{address.street}, {address.suite}, {address.zipcode}, {address.city}</td>
-          </tr>
-          <tr>
-            <td>website</td>
-            <td>{website}</td>
-          </tr>
+          <div className="card-caption">
+            <h1 class="text-uppercase">{name}</h1>
+           <div className="close"> <Link to="/candidates"><CloseButton /></Link></div>
+          </div>
 
-          <tr>
-            <td>company</td>
-            <td>{company.name}</td>
-          </tr>
-          <tr>
-            <td>catchPhrase</td>
-            <td>{company.catchPhrase}</td>
-          </tr>
-          <tr>
-            <td>bs</td>
-            <td>{company.bs}</td>
-          </tr>
-        </tbody>
-      </table>
-
+          <Table>
+            <tbody>
+              <tr>
+                <th className="th-row">User Name:</th>
+                <td>{username}</td>
+              </tr>
+              <tr>
+                <th>Email:</th>
+                <td>{email}</td>
+              </tr>
+              <tr>
+                <th>Phone:</th>
+                <td>{phone}</td>
+              </tr>
+              <tr>
+                <th>Address:</th>
+                <td>{address.street}, {address.suite}, {address.zipcode}, {address.city}</td>
+              </tr>
+              <tr>
+                <th>Web Site:</th>
+                <td>{website}</td>
+              </tr>
+              <tr>
+                <th>Company:</th>
+                <td>{company.name}</td>
+              </tr>
+            </tbody>
+          </Table>
 
     </div>
   )
