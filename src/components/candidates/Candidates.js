@@ -6,7 +6,7 @@ import Detail from './Detail';
 import { Routes, Route, NavLink } from 'react-router-dom'
 
 
-export default function Canditates() {
+export default function Candidates() {
 
 	const dispatch = useDispatch()
 
@@ -16,9 +16,9 @@ export default function Canditates() {
 
 	const [value, setValue] = useState("")
 
-	const { canditates, error, fetching } = state
+	const { candidates, error, fetching } = state
 
-	const filterCanditates = canditates.filter(item => item.name.toLowerCase().includes(value.toLowerCase()) || item.phone.toLowerCase().includes(value.toLowerCase()))
+	const filterCandidates = candidates.filter(item => item.name.toLowerCase().includes(value.toLowerCase()) || item.phone.toLowerCase().includes(value.toLowerCase()))
 
 	return (
 		<section className="page-section">
@@ -57,7 +57,7 @@ export default function Canditates() {
 									</th>
 								</tr>
 
-								: filterCanditates.map((item, i) => (
+								: filterCandidates.map((item, i) => (
 									<tr key={i}>
 										<th>{i + 1}</th>
 										<td>{item.name}</td>

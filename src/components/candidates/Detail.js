@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 export default function Detail() {
 
-  const persons = useSelector(state => state.canditates)
+  const persons = useSelector(state => state.candidates)
 
   let param = useParams()
 
@@ -20,7 +20,7 @@ export default function Detail() {
 
       <div className="card-caption">
         <h1 className="text-uppercase">{name}</h1>
-        <div className="close"> <Link to="/canditates"><CloseButton /></Link></div>
+        <div className="close"> <Link to="/candidates"><CloseButton /></Link></div>
       </div>
 
       <Table>

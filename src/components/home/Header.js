@@ -13,7 +13,7 @@ export default function Header() {
                 <Navbar.Collapse id="navbarResponsive">
                     <ul className="navbar-nav text-uppercase ms-auto py-lg-0">
 
-                        <li className="nav-item"><NavLink to="/canditates" className="nav-link">Canditates</NavLink></li>
+                        <li className="nav-item"><NavLink to="/candidates" className="nav-link">Candidates</NavLink></li>
                         <li className="nav-item"><NavLink to="/contact" className="nav-link">Contact</NavLink></li>
                         <li className="nav-item"><NavLink to="/aboutus" className="nav-link">About</NavLink></li>
 

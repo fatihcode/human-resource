@@ -1,7 +1,7 @@
 import { brand, review, slideItem, team, aboutItem } from "./data"
 
 const INITIAL_STATE = {
-    canditates: [],
+    candidates: [],
     error: "",
     fetching: true,
     review,
@@ -18,7 +18,7 @@ export default (state = INITIAL_STATE, { type, payload }) => {
             return { ...state, fetching: true }
 
         case "GET_DATA_FULFILLED":
-            return { ...state, canditates: payload.sort((a, b) => a.name.localeCompare(b.name)), error: "", fetching: false }
+            return { ...state, candidates: payload.sort((a, b) => a.name.localeCompare(b.name)), error: "", fetching: false }
 
         case "GET_DATA_REJECTED":
             return { ...state, error: payload.message, fetching: false }

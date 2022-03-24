@@ -3,7 +3,7 @@ import Home from './home/Home';
 import About from './about/About';
 import Contact from './contact/Contact';
 import Header from './home/Header';
-import Canditates from './canditates/Canditates';
+import Candidates from './candidates/Candidates';
 import Footer from './home/Footer';
 
 
@@ -14,7 +14,7 @@ export default function App() {
 
       <Routes>
         <Route index element={<Home />} />
-        <Route path="canditates/*" element={<Canditates />} />
+        <Route path="candidates/*" element={<Candidates />} />
         <Route path="aboutus" element={<About />} />
         <Route path="contact" element={<Contact />} />
       </Routes>
