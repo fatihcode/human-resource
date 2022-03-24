@@ -4,12 +4,12 @@
 
 .slider-wrapper {
   position: relative;
-  height: 60vh;
+  height: 50vh;
   overflow: hidden;
 }
 
 .slide {
-  height: 60vh;
+  height: 50vh;
   background-size: cover !important;
 }
 
@@ -102,7 +102,7 @@
 
   .slider-wrapper,
   .slide {
-    height: 50vh;
+    height: 40vh;
   }
 
 }

@@ -1,4 +1,4 @@
-import { API_URL } from "../config/data"
+import { API_URL } from "./data"
 import axios from 'axios'
 
 

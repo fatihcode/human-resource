@@ -9,21 +9,17 @@ import Footer from './home/Footer';
 
 export default function App() {
   return (
-    <>
+    <BrowserRouter>
       <Header />
-  
-        <BrowserRouter>
-          <Routes>
-            
-            <Route index element={<Home />} />
-            <Route path="candidates/*" element={<Candidates />} />
-            <Route path="aboutus" element={<About />} />
-            <Route path="contact" element={<Contact />} />
 
-          </Routes>
-        </BrowserRouter>
-  
+      <Routes>
+        <Route index element={<Home />} />
+        <Route path="candidates/*" element={<Candidates />} />
+        <Route path="aboutus" element={<About />} />
+        <Route path="contact" element={<Contact />} />
+      </Routes>
+
       <Footer />
-    </>
+    </BrowserRouter>
   );
 }

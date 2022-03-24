@@ -1,4 +1,4 @@
-import { brand, review, slideItem, team, aboutItem } from "../config/data"
+import { brand, review, slideItem, team, aboutItem } from "./data"
 
 const INITIAL_STATE = {
     candidates: [],

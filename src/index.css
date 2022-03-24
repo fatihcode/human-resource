@@ -33,3 +33,14 @@ th:last-child {
   font-size: 0.875em;
   color: #198754;
 }
+
+
+#mainNav.navbar-shrink {
+  background-color: rgba(0, 0, 0, .6) !important;
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+}
+
+.comp {
+  padding: 8rem 0 !important;
+}

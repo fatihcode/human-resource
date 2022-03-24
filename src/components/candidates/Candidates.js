@@ -22,7 +22,7 @@ export default function Candidates() {
     const filterCandidates = candidates.filter(item => item.name.toLowerCase().includes(value.toLowerCase()) || item.phone.toLowerCase().includes(value.toLowerCase()))
 
     return (
-        <section className="page-section">
+        <section className="page-section comp">
 
             <Container>
 

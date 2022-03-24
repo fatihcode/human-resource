@@ -8,7 +8,7 @@ export default function About() {
 
     return (
 
-        <section className="page-section" id="about">
+        <section className="page-section comp" id="about">
             <div className="container">
 
                 <div className="text-center">
