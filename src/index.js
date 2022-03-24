@@ -14,9 +14,9 @@ import { composeWithDevTools } from '@redux-devtools/extension'
 
 const store = createStore(reducer, composeWithDevTools(applyMiddleware(thunk, promise, logger)))
 
-ReactDOM.render(
+ReactDOM.render( 
   <React.StrictMode>
-    
+  
     <Provider store={store}>
       <App />
     </Provider>

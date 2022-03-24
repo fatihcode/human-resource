@@ -9,7 +9,7 @@ export default function Contact() {
     const review = useSelector(state => state.review)
 
     return (
-        <section className="page-section comp">
+        <section className="page-section">
             <Container>
 
                 <div className="text-center">
