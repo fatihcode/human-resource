@@ -16,7 +16,7 @@ export default function Brand() {
                             <a href="#!">
                                 <img
                                     className="img-fluid img-brand d-block mx-auto"
-                                    src={item.image}
+                                    src={"./img/logos/"+item.image}
                                     alt={item.name}
                                 />
                             </a>

@@ -1,12 +1,12 @@
 import { NavLink } from "react-router-dom"
-// import logo from '../navbar-logo.svg'
 
-export const Header = () => {
+
+export default function Header() {
     return (
         <nav className="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div className="container">
                 <a className="navbar-brand" href="/">
-                    <img src="../navbar-logo.svg" alt="..." />
+                    <img src="../img/navbar-logo.svg" alt="..." />
                 </a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
@@ -25,5 +25,3 @@ export const Header = () => {
         </nav>
     )
 }
-
-export default Header

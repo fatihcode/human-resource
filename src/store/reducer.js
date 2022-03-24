@@ -1,4 +1,4 @@
-import { brand, review, slideItem, team } from "../config/data"
+import { brand, review, slideItem, team, aboutItem } from "../config/data"
 
 const INITIAL_STATE = {
     candidates: [],
@@ -7,7 +7,8 @@ const INITIAL_STATE = {
     review,
     team,
     brand,
-    slideItem
+    slideItem,
+    aboutItem
 }
 
 export default (state = INITIAL_STATE, { type, payload }) => {
