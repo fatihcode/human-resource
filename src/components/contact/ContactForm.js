@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Button, Col, Form, Row } from 'react-bootstrap'
+import { Button, Col, Form, Row, FloatingLabel } from 'react-bootstrap'
 import { useDispatch } from 'react-redux';
 import { postReview } from '../../store/action';
 
@@ -31,7 +31,7 @@ export default function ContactForm() {
                 setTitle(""); setEmail(""); setMessage("")
                 setValidated(false)
                 setSub(true)
-                setTimeout(() => setSub(false), 3000);
+                setTimeout(() => setSub(false), 1500);
             }
         }
     };

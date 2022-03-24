@@ -31,7 +31,7 @@
   top: 50%;
   transform: translateY(-50%);
   z-index: 10;
-  background: url('../../../public/img/right.svg') no-repeat center center / 16px;
+  background: url('../../../public/static/media/right.svg') no-repeat center center / 16px;
   width: 32px;
   height: 32px;
   text-indent: -9999px;
@@ -40,7 +40,7 @@
 
 .previousButton:hover,
 .nextButton:hover {
-  background: url('../../../public/img/right.svg') no-repeat center center / 16px;
+  background: url('../../../public/static/media/right.svg') no-repeat center center / 16px;
 }
 
 .previousButton {
@@ -63,7 +63,7 @@
 
 .slider-content {
   text-align: center;
-  background: no-repeat center center;
+
 }
 
 .slider-content .inner {

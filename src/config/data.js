@@ -81,7 +81,7 @@ export const brand = [
 
 export const aboutItem = [
     {
-        title: "BHAG (Big Hairy Audacious Goal)",
+        title: "Big Hairy Audacious Goal",
         image: "1.jpg",
         description: "By 2040, we will impact 50% of the global workforce by empowering HR professionals in their careers, maximizing human potential."
     },

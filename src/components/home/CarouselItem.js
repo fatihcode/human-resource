@@ -9,7 +9,7 @@ export default function CarouselItem(props) {
     return (
         <Carousel.Item>
 
-            <img className="d-block w-100" src={"./img/" + url} alt={title} />
+            <img className="d-block w-100" src={"./static/media/" + url} alt={title} />
 
             <Carousel.Caption>
                 <h5>{title}</h5>

@@ -11,10 +11,10 @@ export default function Slide() {
     const slideItem = useSelector(state => state.slideItem)
 
     return (
-        <Container className="">
+        // <Container fluid="xxl">
             <Slider className="slider-wrapper" autoplay={3000}>
                 {slideItem.map((item, i) => (
-                    <div key={i} className="slider-content" style={{ background: `url('./img/header/${item.image}')` }} >
+                    <div key={i} className="slider-content" style={{ background: `url('./static/media/header/${item.image}') no-repeat center center` }} >
                         <div className="inner">
                             <h1 className="masthead-subheading">{item.title}</h1>
                             <p>{item.description}</p>
@@ -23,6 +23,6 @@ export default function Slide() {
                     </div>
                 ))}
             </Slider>
-        </Container>
+        // </Container>
     )
 }
