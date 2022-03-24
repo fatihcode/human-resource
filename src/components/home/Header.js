@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom"
 
 export default function Header() {
     return (
-        <Navbar variant="dark" expand="lg" fixed="top" id="mainNav">
+        <Navbar variant="dark" expand="lg" sticky="top" id="mainNav">
             <Container>
                 <Navbar.Brand href="/">
                     <img src="../static/media/navbar-logo.svg" alt="..." />
