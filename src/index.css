@@ -39,17 +39,19 @@ th:last-child {
 
 
 #mainNav {
-  background-color: rgba(0, 0, 0, .6) !important;
-  -webkit-backdrop-filter: saturate(180%) blur(20px);
-  backdrop-filter: saturate(180%) blur(20px);
+ /* background-color: #28292b !important; */
+ background-color: rgba(0, 0, 0, .8) !important;
+ -webkit-backdrop-filter: saturate(180%) blur(20px);
+ backdrop-filter: saturate(180%) blur(20px);
 }
 
-#mainNav.navbar-shrink {
-  background-color: rgba(0, 0, 0, .6) !important;
-  -webkit-backdrop-filter: saturate(180%) blur(20px);
-  backdrop-filter: saturate(180%) blur(20px);
-}
 
+@media (min-width: 992px) {
+  #mainNav {
+    padding-top: 1.1rem !important;
+    padding-bottom: 1.1rem !important;
+  }
+}
 
 /*---------------------------------------------------------*/
 

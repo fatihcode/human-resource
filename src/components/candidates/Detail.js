@@ -20,7 +20,7 @@ export default function Detail() {
 
       <div className="card-caption">
         <h1 className="text-uppercase">{name}</h1>
-        <div className="close"> <Link to="/candidates"><CloseButton /></Link></div>
+        <div className="close"> <Link to="/human-resource/candidates"><CloseButton /></Link></div>
       </div>
 
       <Table>

@@ -4,11 +4,11 @@ import Team from './Team'
 
 export default function Home() {
 
-   return (
-      <>
-         <Slide />
-         <Team />
-         <Brand />
-      </>
-   )
+	return (
+		<>
+			<Slide />
+			<Team />
+			<Brand />
+		</>
+	)
 }

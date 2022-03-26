@@ -6,19 +6,19 @@ import { useSelector } from 'react-redux'
 
 export default function Slide() {
 
-    const slideItem = useSelector(state => state.slideItem)
+	const slideItem = useSelector(state => state.slideItem)
 
-    return (
-        <Slider className="slider-wrapper" autoplay={3000}>
-            {slideItem.map((item, i) => (
-                <div key={i} className="slider-content" style={{ background: `url('./static/media/header/${item.image}') no-repeat center center` }} >
-                    <div className="inner">
-                        <h1 className="masthead-subheading">{item.title}</h1>
-                        <p>{item.description}</p>
-                    </div>
+	return (
+		<Slider className="slider-wrapper" autoplay={3000}>
+			{slideItem.map((item, i) => (
+				<div key={i} className="slider-content" style={{ background: `url('./human-resource/static/media/header/${item.image}') no-repeat center center` }} >
+					<div className="inner">
+						<h1 className="masthead-subheading">{item.title}</h1>
+						<p>{item.description}</p>
+					</div>
 
-                </div>
-            ))}
-        </Slider>
-    )
+				</div>
+			))}
+		</Slider>
+	)
 }

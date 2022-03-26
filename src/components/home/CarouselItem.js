@@ -4,18 +4,18 @@ import { Carousel } from 'react-bootstrap'
 
 export default function CarouselItem(props) {
 
-    const { title, caption, url } = props.slide
+	const { title, caption, url } = props.slide
 
-    return (
-        <Carousel.Item>
+	return (
+		<Carousel.Item>
 
-            <img className="d-block w-100" src={"./static/media/" + url} alt={title} />
+			<img className="d-block w-100" src={"./static/media/" + url} alt={title} />
 
-            <Carousel.Caption>
-                <h5>{title}</h5>
-                <p>{caption}</p>
-            </Carousel.Caption>
+			<Carousel.Caption>
+				<h5>{title}</h5>
+				<p>{caption}</p>
+			</Carousel.Caption>
 
-        </Carousel.Item>
-    )
+		</Carousel.Item>
+	)
 }

@@ -3,28 +3,28 @@ import { useSelector } from 'react-redux'
 
 export default function Brand() {
 
-    const brand = useSelector(state => state.brand)
+	const brand = useSelector(state => state.brand)
 
-    return (
+	return (
 
-        <div className="py-5">
-            <div className="container">
-                <div className="row align-items-center">
+		<div className="py-5">
+			<div className="container">
+				<div className="row align-items-center">
 
-                    {brand.map((item, i) => (
-                        <div key={i} className="col-md-3 col-sm-6 my-3">
-                            <a href="#!">
-                                <img
-                                    className="img-fluid img-brand d-block mx-auto"
-                                    src={"./static/media/logos/"+item.image}
-                                    alt={item.name}
-                                />
-                            </a>
-                        </div>
-                    ))}
+					{brand.map((item, i) => (
+						<div key={i} className="col-md-3 col-sm-6 my-3">
+							<a href="#!">
+								<img
+									className="img-fluid img-brand d-block mx-auto"
+									src={"./human-resource/static/media/logos/" + item.image}
+									alt={item.name}
+								/>
+							</a>
+						</div>
+					))}
 
-                </div>
-            </div>
-        </div>
-    )
+				</div>
+			</div>
+		</div>
+	)
 }
