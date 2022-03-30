@@ -21,7 +21,7 @@ export default function Team() {
 					{team.map((item, i) => (
 						<div key={i} className="col-lg-4">
 							<div className="team-member">
-								<img className="mx-auto rounded-circle" src={"./human-resource/static/media/team/" + item.image} alt={item.name} />
+								<img className="mx-auto rounded-circle" src={"./static/media/team/" + item.image} alt={item.name} />
 								<h4>{item.name}</h4>
 								<p className="text-muted">{item.work}</p>
 								<a className="btn btn-dark btn-social mx-2" href="#"><i className="fab fa-twitter"></i></a>
