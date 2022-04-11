@@ -11,7 +11,7 @@ export default function Detail() {
 
   let param = useParams()
 
-  const user = persons.filter(item => item.id == param.id).pop()
+  const user = persons.filter(item => item._id == param.id).pop()
 
   const { name, username, email, address, phone, website, company } = user
 
@@ -47,7 +47,7 @@ export default function Detail() {
           </tr>
           <tr>
             <th>Company:</th>
-            <td>{company.name}</td>
+            <td>{company}</td>
           </tr>
         </tbody>
       </Table>

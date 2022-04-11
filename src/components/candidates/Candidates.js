@@ -64,7 +64,7 @@ export default function Candidates() {
 										<td>{item.phone}</td>
 										<th>
 											<NavLink
-												to={"detail/" + item.id}
+												to={"detail/" + item._id}
 												type="button"
 												className={({ isActive }) => isActive ? "btn btn-sm btn-outline-primary" : "btn btn-sm btn-primary"}
 											>Detail</NavLink>

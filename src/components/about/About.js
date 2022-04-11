@@ -21,7 +21,7 @@ export default function About() {
 					{aboutItem.map((item, i) => (
 						<li key={i} className={i % 2 === 0 ? null : "timeline-inverted"}>
 							<div className="timeline-image">
-								<img className="rounded-circle img-fluid" src={"./static/media/about/" + item.image} alt="..." /></div>
+								<img className="rounded-circle img-fluid" src={item.image} alt="..." /></div>
 							<div className="timeline-panel">
 								<div className="timeline-heading">
 									<h4 className="subheading">{item.title}</h4>
