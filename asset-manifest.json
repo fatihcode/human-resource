@@ -1,15 +1,27 @@
 {
   "files": {
     "main.css": "/human-resource/static/css/main.f54ea794.css",
-    "main.js": "/human-resource/static/js/main.de5d5449.js",
+    "main.js": "/human-resource/static/js/main.c9b648dd.js",
+    "static/media/artboard_3.jpg": "/human-resource/static/media/artboard_3.3d51cecb068b8ce15560.jpg",
+    "static/media/artboard_4.jpg": "/human-resource/static/media/artboard_4.481a90e50c99ebaf9692.jpg",
+    "static/media/artboard_2.jpg": "/human-resource/static/media/artboard_2.99ae4428683036f116d4.jpg",
+    "static/media/artboard_1.jpg": "/human-resource/static/media/artboard_1.132b067ba65ef900304d.jpg",
+    "static/media/2.jpg": "/human-resource/static/media/2.e81bb5241e374738213c.jpg",
+    "static/media/3.jpg": "/human-resource/static/media/3.2cbe0483a572d3439d10.jpg",
+    "static/media/1.jpg": "/human-resource/static/media/1.e737e0936528752f831d.jpg",
     "static/media/logo.svg": "/human-resource/static/media/logo.379ab7506498874f7927899e9531a724.svg",
+    "static/media/4.jpg": "/human-resource/static/media/4.35152726673752965f58.jpg",
+    "static/media/microsoft.svg": "/human-resource/static/media/microsoft.1351b872036d06dc317e6473a02c8cb2.svg",
+    "static/media/google.svg": "/human-resource/static/media/google.18e374630f64c0a5de2f9039e05cab40.svg",
+    "static/media/facebook.svg": "/human-resource/static/media/facebook.ad73d91704ace39780f2c217b84d569f.svg",
+    "static/media/ibm.svg": "/human-resource/static/media/ibm.03f09965c1094fe7a3b1756fe8e36fb2.svg",
     "index.html": "/human-resource/index.html",
     "static/media/right.svg": "/human-resource/static/media/right.e51fb5746f945d8b0635.svg",
     "main.f54ea794.css.map": "/human-resource/static/css/main.f54ea794.css.map",
-    "main.de5d5449.js.map": "/human-resource/static/js/main.de5d5449.js.map"
+    "main.c9b648dd.js.map": "/human-resource/static/js/main.c9b648dd.js.map"
   },
   "entrypoints": [
     "static/css/main.f54ea794.css",
-    "static/js/main.de5d5449.js"
+    "static/js/main.c9b648dd.js"
   ]
 }
