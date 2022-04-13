@@ -18,7 +18,8 @@ import about_3 from '../media/about/3.jpg'
 import about_4 from '../media/about/4.jpg'
 
 // export const API_URL = "https://jsonplaceholder.typicode.com/users"
-export const API_URL = "http://127.0.0.1:9000/users"
+// export const API_URL = "http://127.0.0.1:9000/users"
+export const API_URL = "https://resource-human.herokuapp.com/users"
 
 
 export const review = [

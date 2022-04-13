@@ -5,7 +5,7 @@ import { Row, Col, Container } from 'react-bootstrap';
 export default function Footer() {
 	return (
 		<Container className="footer py-4">
-			<Row className="justify-content-between">
+			<Row className="justify-content-between align-items-center">
 
 				<Col lg={3} className="text-lg-start">Copyright &copy; 2022</Col>
 

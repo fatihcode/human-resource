@@ -11,8 +11,8 @@ export default function Detail() {
 
   let param = useParams()
 
-  const user = persons.filter(item => item._id == param.id).pop()
-
+  const user = persons.find(item => item._id === param.id)
+ 
   const { name, username, email, address, phone, website, company } = user
 
   return (
