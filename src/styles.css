@@ -10923,7 +10923,7 @@ p {
     padding-bottom: 1.5rem;
     border: none;
     background-color: transparent;
-    transition: padding-top 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
+    /* transition: padding-top 0.3s ease-in-out, padding-bottom 0.3s ease-in-out; */
   }
   #mainNav .navbar-brand {
     font-size: 1.5em;
