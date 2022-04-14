@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/human-resource/static/css/main.f54ea794.css",
+    "main.css": "/human-resource/static/css/main.573648e7.css",
     "main.js": "/human-resource/static/js/main.c9b648dd.js",
     "static/media/artboard_3.jpg": "/human-resource/static/media/artboard_3.3d51cecb068b8ce15560.jpg",
     "static/media/artboard_4.jpg": "/human-resource/static/media/artboard_4.481a90e50c99ebaf9692.jpg",
@@ -17,11 +17,11 @@
     "static/media/ibm.svg": "/human-resource/static/media/ibm.03f09965c1094fe7a3b1756fe8e36fb2.svg",
     "index.html": "/human-resource/index.html",
     "static/media/right.svg": "/human-resource/static/media/right.e51fb5746f945d8b0635.svg",
-    "main.f54ea794.css.map": "/human-resource/static/css/main.f54ea794.css.map",
+    "main.573648e7.css.map": "/human-resource/static/css/main.573648e7.css.map",
     "main.c9b648dd.js.map": "/human-resource/static/js/main.c9b648dd.js.map"
   },
   "entrypoints": [
-    "static/css/main.f54ea794.css",
+    "static/css/main.573648e7.css",
     "static/js/main.c9b648dd.js"
   ]
 }
