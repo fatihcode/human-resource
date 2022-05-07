@@ -8,7 +8,8 @@ const INITIAL_STATE = {
 	team,
 	brand,
 	slideItem,
-	aboutItem
+	aboutItem,
+	user:{}
 }
 
 export default (state = INITIAL_STATE, { type, payload }) => {
@@ -22,6 +23,17 @@ export default (state = INITIAL_STATE, { type, payload }) => {
 
 		case "GET_DATA_REJECTED":
 			return { ...state, error: payload.message, fetching: false }
+
+
+		case "POST_DATA_PENDING":
+			return { ...state, fetching: true }
+
+		case "POST_DATA_FULFILLED":
+			return { ...state, user: [payload, ...state.user] }
+
+		case "POST_DATA_REJECTED":
+			return { ...state, error: payload.message, fetching: false }
+
 
 		case "POST_REVIEW":
 			return { ...state, review: [payload, ...state.review] }
