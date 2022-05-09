@@ -1,9 +1,9 @@
 import React from 'react'
-import { CloseButton, Table } from 'react-bootstrap';
+import { Button, CloseButton, Table } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
-
+import { API } from '../../store/action';
 
 export default function Detail() {
 
@@ -12,8 +12,14 @@ export default function Detail() {
   let param = useParams()
 
   const user = persons.find(item => item._id === param.id)
- 
-  const { name, username, email, address, phone, website, company } = user
+
+  const {_id, name, email, address, phone, website, company } = user
+
+  const handleDelete = (id) => {
+    API.delete(`/${id}`)
+    
+ }
+
 
   return (
     <div className="portfolio-modal mt-5">
@@ -26,10 +32,6 @@ export default function Detail() {
       <Table>
         <tbody>
           <tr>
-            <th className="th-row">User Name:</th>
-            <td>{username}</td>
-          </tr>
-          <tr>
             <th>Email:</th>
             <td><a href={"mailto:" + email}>{email}</a> </td>
           </tr>
@@ -39,7 +41,7 @@ export default function Detail() {
           </tr>
           <tr>
             <th>Address:</th>
-            <td>{address.street}, {address.suite}, {address.zipcode}, {address.city}</td>
+            <td>{address}</td>
           </tr>
           <tr>
             <th>Web Site:</th>
@@ -48,6 +50,14 @@ export default function Detail() {
           <tr>
             <th>Company:</th>
             <td>{company}</td>
+          </tr>
+          <tr>
+            <th colSpan={2} >
+
+              <Button variant="outline-info mx-3" >Edit</Button>
+              <Button variant="outline-danger" onClick={handleDelete(_id)} >Delete</Button>
+
+            </th>
           </tr>
         </tbody>
       </Table>

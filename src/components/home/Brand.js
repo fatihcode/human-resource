@@ -18,6 +18,7 @@ export default function Brand() {
 									className="img-fluid img-brand d-block mx-auto"
 									src={item.image}
 									alt={item.name}
+									height="2.75rem"
 								/>
 							</a>
 						</div>

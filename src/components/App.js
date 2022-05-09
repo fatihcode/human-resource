@@ -6,6 +6,7 @@ import Header from './home/Header';
 import Candidates from './candidates/Candidates';
 import Footer from './home/Footer';
 import Register from './candidates/Register';
+import Signin from './auth/Signin';
 
 
 export default function App() {
@@ -19,6 +20,7 @@ export default function App() {
         <Route path="human-resource/aboutus" element={<About />} />
         <Route path="human-resource/contact" element={<Contact />} />
         <Route path="human-resource/form" element={<Register />} />
+        <Route path="human-resource/signin" element={<Signin />} />
       </Routes>
 
       <Footer />

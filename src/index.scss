@@ -3,10 +3,10 @@
 
 th {
   text-align: center !important;
-}
 
-th:last-child {
-  width: 10% !important;
+  &:last-child {
+    width: 10% !important;
+  }
 }
 
 .card-caption {
@@ -34,6 +34,18 @@ th:last-child {
   color: #198754;
 }
 
+.btn-social {
+  color: #6D6F72;
+  font-size: 1.5em;
+  margin: 0 0.6rem;
+  height: auto !important;
+  width: auto !important;
+
+  &:hover {
+    color: #000;
+  }
+
+}
 
 /*---------------------------------------------------------*/
 
@@ -41,15 +53,16 @@ th:last-child {
 #mainNav {
   background-color: #2c2c2c !important;
   transition: all 0.3s ease;
+
+  &.navbar-shrink {
+
+    background-color: rgba(0, 0, 0, 0.6) !important;
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+    /* transition: all 0.3s ease; */
+  }
 }
 
-#mainNav.navbar-shrink {
-
-  background-color: rgba(0, 0, 0, 0.6) !important;
-  -webkit-backdrop-filter: saturate(180%) blur(20px);
-  backdrop-filter: saturate(180%) blur(20px);
-  /* transition: all 0.3s ease; */
-}
 
 
 @media (min-width: 992px) {

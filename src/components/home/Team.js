@@ -21,12 +21,12 @@ export default function Team() {
 					{team.map((item, i) => (
 						<div key={i} className="col-lg-4">
 							<div className="team-member">
-								<img className="mx-auto rounded-circle" src={item.image} alt={item.name} />
+								<img className="mx-auto rounded-circle" width="14rem" height="14rem" src={item.image} alt={item.name} />
 								<h4>{item.name}</h4>
 								<p className="text-muted">{item.work}</p>
-								<a className="btn btn-dark btn-social mx-2" href="#"><i className="fab fa-twitter"></i></a>
-								<a className="btn btn-dark btn-social mx-2" href="#"><i className="fab fa-facebook-f"></i></a>
-								<a className="btn btn-dark btn-social mx-2" href="#"><i className="fab fa-linkedin-in"></i></a>
+								<a className="btn-social" href="#!"><i className="bi bi-twitter"></i></a>
+								<a className="btn-social" href="#!"><i className="bi bi-facebook"></i></a>
+								<a className="btn-social" href="#!"><i className="bi bi-linkedin"></i></a>
 							</div>
 						</div>
 					))}

@@ -4,17 +4,21 @@ import { getData } from '../../store/action'
 import { FormControl, Table, Spinner, Container } from 'react-bootstrap';
 import Detail from './Detail';
 import { Routes, Route, NavLink } from 'react-router-dom'
+import Register from './Register';
 
 
 export default function Candidates() {
 
 	const dispatch = useDispatch()
+	const [add, setAdd] = useState("")
 
-	useEffect(() => dispatch(getData()), [])
+	useEffect(() => dispatch(getData()), [add])
 
 	const state = useSelector(state => state)
 
 	const [value, setValue] = useState("")
+	
+
 
 	const { candidates, error, fetching } = state
 
@@ -44,20 +48,7 @@ export default function Candidates() {
 					</thead>
 
 					<tbody>
-						{fetching
-							? <tr>
-								<td colSpan={4} style={{ "textAlign": "center" }}>
-									<Spinner animation="border" />
-								</td>
-							</tr>
-							: error
-								? <tr>
-									<th colSpan={4} style={{ "textAlign": "center" }}>
-										{error}
-									</th>
-								</tr>
-
-								: filterCandidates.map((item, i) => (
+						{ filterCandidates.map((item, i) => (
 									<tr key={i}>
 										<th>{i + 1}</th>
 										<td>{item.name}</td>
@@ -77,8 +68,10 @@ export default function Candidates() {
 				</Table>
 
 				<Routes>
-					<Route path="detail/:id" element={<Detail />} />
+					<Route path="detail/:id" element={<Detail  setAdd={setAdd}/>} />
 				</Routes>
+
+				<Register setAdd={setAdd}/>
 
 			</Container>
 		</section>

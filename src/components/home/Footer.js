@@ -10,9 +10,10 @@ export default function Footer() {
 				<Col lg={3} className="text-lg-start">Copyright &copy; 2022</Col>
 
 				<Col lg={3} className="my-3 my-lg-0">
-					<a className="btn btn-dark btn-social mx-2" href="#!"><i className="fab fa-twitter"></i></a>
-					<a className="btn btn-dark btn-social mx-2" href="#!"><i className="fab fa-facebook-f"></i></a>
-					<a className="btn btn-dark btn-social mx-2" href="#!"><i className="fab fa-linkedin-in"></i></a>
+					<a className="btn-social" href="#!"><i className="bi bi-twitter"></i></a>
+					<a className="btn-social" href="#!"><i className="bi bi-facebook"></i></a>
+					<a className="btn-social" href="#!"><i className="bi bi-linkedin"></i></a>
+
 				</Col>
 
 				<Col lg={3} className="text-lg-end">

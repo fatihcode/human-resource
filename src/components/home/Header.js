@@ -11,7 +11,7 @@ export default function Header() {
 		// Navbar shrink function
 		const navbarShrink = function () {
 			const navbarCollapsible = document.body.querySelector('#mainNav');
-		
+
 			if (!navbarCollapsible) {
 				return;
 			}
@@ -49,7 +49,7 @@ export default function Header() {
 		<Navbar variant="dark" expand="md" sticky="top" id="mainNav">
 			<Container >
 				<Navbar.Brand href="/human-resource">
-					<img src={logo} alt="Human Resource" />
+					<img src={logo} height="2rem" alt="Human Resource" />
 				</Navbar.Brand>
 				<Navbar.Toggle aria-controls="basic-navbar-nav" />
 				<Navbar.Collapse id="navbarResponsive">
@@ -58,6 +58,7 @@ export default function Header() {
 						<li className="nav-item"><NavLink to="/human-resource/candidates" className="nav-link">Candidates</NavLink></li>
 						<li className="nav-item"><NavLink to="/human-resource/contact" className="nav-link">Contact</NavLink></li>
 						<li className="nav-item"><NavLink to="/human-resource/aboutus" className="nav-link">About</NavLink></li>
+						<li className="nav-item"><NavLink to="/human-resource/signin" className="nav-link"><i className="bi bi-person-fill"></i> Sign In</NavLink></li>
 
 					</ul>
 				</Navbar.Collapse>

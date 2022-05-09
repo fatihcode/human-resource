@@ -8,20 +8,24 @@ export default function ContactForm() {
 
 	const dispatch = useDispatch()
 
-	const [title, setTitle] = useState()
-	const [email, setEmail] = useState()
-	const [message, setMessage] = useState()
+	const [title, setTitle] = useState("")
+	const [email, setEmail] = useState("")
+	const [message, setMessage] = useState("")
 	const [validated, setValidated] = useState(false);
 	const [sub, setSub] = useState(false);
 
 	const handleSubmit = (e) => {
 		const form = e.currentTarget;
+		e.preventDefault();
 
 		setValidated(true);
 
-		if (form.checkValidity() === false) {
+		console.log("click");
 
-			e.preventDefault();
+		// if (form.checkValidity() === false) {
+
+			console.log("validate");
+
 			e.stopPropagation();
 
 			if (email && title && message) {
@@ -33,7 +37,7 @@ export default function ContactForm() {
 				setSub(true)
 				setTimeout(() => setSub(false), 1500);
 			}
-		}
+		// }
 	};
 
 	return (
