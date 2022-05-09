@@ -1,105 +1,88 @@
 import React, { useState } from 'react'
-import { Container, Button, Col, Form, Row } from 'react-bootstrap';
-
-import { API } from '../../store/action';
-
-export default function Register() {
-
-   const [form, setForm] = useState({
-      name: '',
-      email: '',
-      phone: '',
-      address: '',
-      website: '',
-      company: ''
-   })
-
-   console.log(form)
+import { Button, Col, Form, Row, Modal } from 'react-bootstrap';
+import { useDispatch, useSelector } from 'react-redux';
+import { postUser } from '../../store/action'
 
 
+export default function Register(props) {
+
+   const sending = useSelector(state => state.sending)
+   const dispatch = useDispatch()
    const [validated, setValidated] = useState(false);
-   const [sub, setSub] = useState(false);
+   const [formData, setFormData] = useState({ name: '', phone: '', email: '', address: '', website: '', company: '' })
+
+   console.log(formData)
 
    const handleSubmit = (e) => {
-      const formCheck = e.currentTarget;
 
-      setValidated(true);
-
+      const form = e.currentTarget;
       e.preventDefault();
-      console.log("içerde");
-
-      if (formCheck.checkValidity() === true) {
-         console.log("validate");
-
-         if (form.name && form.phone) {
-
-            API.post('/', form)
-        
-            setValidated(false)
-            setSub(true)
-            setTimeout(() => setSub(false), 1500);
-         }
+      setValidated(true);
+      if (form.checkValidity()) {
+         props.onHide()
+         dispatch(postUser(formData))
+         setValidated(false)
+         setFormData({ name: '', phone: '', email: '', address: '', website: '', company: '' })
       }
    };
 
 
    return (
-      <section className="page-section">
+      <Modal {...props} size="md" aria-labelledby="contained-modal-title-vcenter" centered >
 
-         <Container>
+         <Modal.Header closeButton>
+            <Modal.Title id="contained-modal-title-vcenter">
+               Register Form
+            </Modal.Title>
+         </Modal.Header>
 
-            <div className="text-center">
-               <h2 className="section-heading text-uppercase">Register Form</h2>
-               <h3 className="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-            </div>
+         <Modal.Body>
 
-            <Form className="px-lg-5 px-1 mb-5" noValidate validated={validated} onSubmit={handleSubmit}>
+            <Form className="m-4" noValidate validated={validated} onSubmit={handleSubmit}>
 
-               <Row className="mb-3 justify-content-center">
-                  <Col xs={12} md={6}>
+               
 
-                     <Form.Group className="mb-3" controlId="validationCustom01">
+                     <Form.Group className="mb-3" controlId="name">
                         <Form.Label>Name</Form.Label>
-                        <Form.Control onChange={(e) => setForm({ ...form, name: e.target.value })} type="text" placeholder="" value={form.name} required />
+                        <Form.Control onChange={(e) => setFormData({ ...formData, name: e.target.value })} type="text" placeholder="" value={formData.name} required />
                      </Form.Group>
 
-                     <Form.Group className="mb-3" controlId="validationCustom02">
-                        <Form.Label>Email Address</Form.Label>
-                        <Form.Control onChange={(e) => setForm({ ...form, email: e.target.value })} type="email" placeholder="" value={form.email} required />
-                     </Form.Group>
-
-                     <Form.Group className="mb-3">
+                     <Form.Group className="mb-3" controlId="phone">
                         <Form.Label>Phone</Form.Label>
-                        <Form.Control onChange={(e) => setForm({ ...form, phone: e.target.value })} type="tel" placeholder="" value={form.phone} />
+                        <Form.Control onChange={(e) => setFormData({ ...formData, phone: e.target.value })} type="tel" placeholder="" value={formData.phone} required />
                      </Form.Group>
 
-                     <Form.Group className="mb-3">
+                     <Form.Group className="mb-3" controlId="email">
+                        <Form.Label>Email Address</Form.Label>
+                        <Form.Control onChange={(e) => setFormData({ ...formData, email: e.target.value })} type="email" placeholder="" value={formData.email} />
+                     </Form.Group>
+
+                     <Form.Group className="mb-3" controlId="website">
                         <Form.Label>Website</Form.Label>
-                        <Form.Control onChange={(e) => setForm({ ...form, website: e.target.value })} type="string" placeholder="" value={form.website} />
+                        <Form.Control onChange={(e) => setFormData({ ...formData, website: e.target.value })} type="string" placeholder="" value={formData.website} />
                      </Form.Group>
 
-                     <Form.Group className="mb-3">
+                     <Form.Group className="mb-3" controlId="company">
                         <Form.Label>Company</Form.Label>
-                        <Form.Control onChange={(e) => setForm({ ...form, company: e.target.value })} type="text" placeholder="" value={form.company} />
+                        <Form.Control onChange={(e) => setFormData({ ...formData, company: e.target.value })} type="text" placeholder="" value={formData.company} />
                      </Form.Group>
 
-                     <Form.Group className="mb-3">
+                     <Form.Group className="mb-3" controlId="address">
                         <Form.Label>Address</Form.Label>
-                        <Form.Control onChange={(e) => setForm({ ...form, address: e.target.value })} type="text" placeholder="" value={form.address} />
+                        <Form.Control onChange={(e) => setFormData({ ...formData, address: e.target.value })} type="text" placeholder="" value={formData.address} />
                      </Form.Group>
 
-
-                     {sub
-                        ? <Button variant="success">Form Submitted</Button>
+                     {sending
+                        ? <Button variant="success" disabled>Sending</Button>
                         : <Button type="submit">Submit</Button>
                      }
-                  </Col>
-
-               </Row>
+              
             </Form>
 
+         </Modal.Body>
 
-         </Container>
-      </section>
+   
+
+      </Modal>
    )
 }

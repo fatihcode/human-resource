@@ -1,4 +1,3 @@
-
 import axios from 'axios'
 
 export const API = axios.create({
@@ -7,28 +6,36 @@ export const API = axios.create({
 })
 
 
-export function getData() {
+export function getUsers() {
 	return dispatch => {
-
 		dispatch({
-			type: "GET_DATA",
+			type: "GET_USERS",
 			payload: API.get('/').then(res => res.data)
 		})
 	}
 }
 
 
-// export function postData() {
-// 	return dispatch => {
+export function delUser(id) {
+	return dispatch => {
+		dispatch({
+			type: "DEL_USER",
+			payload: API.delete(`/${id}`)
+		})
+	}
+}
 
-// 		dispatch({
-// 			type: "POST_DATA",
-// 			payload: API.post(API_URL,{
 
-// 			}).then(res => res.data)
-// 		})
-// 	}
-// }
+export function postUser(user) {
+	return dispatch => {
+		dispatch({
+			type: "POST_USER",
+			payload: API.post(`/`,user)
+		})
+	}
+}
+
+
 
 
 export function postReview(payload) {

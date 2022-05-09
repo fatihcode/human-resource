@@ -1,27 +1,25 @@
 import React from 'react'
 import { Button, CloseButton, Table } from 'react-bootstrap';
-import { useSelector } from 'react-redux';
-import { useParams } from 'react-router';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate, useParams } from 'react-router';
 import { Link } from 'react-router-dom';
-import { API } from '../../store/action';
+import { delUser } from '../../store/action'
 
 export default function Detail() {
 
+  const dispatch = useDispatch()
+  const navigate = useNavigate();
   const persons = useSelector(state => state.candidates)
 
   let param = useParams()
 
   const user = persons.find(item => item._id === param.id)
 
-  const {_id, name, email, address, phone, website, company } = user
-
-  const handleDelete = (id) => {
-    API.delete(`/${id}`)
-    
- }
+  const { _id, name, email, address, phone, website, company } = user
 
 
   return (
+    
     <div className="portfolio-modal mt-5">
 
       <div className="card-caption">
@@ -55,7 +53,7 @@ export default function Detail() {
             <th colSpan={2} >
 
               <Button variant="outline-info mx-3" >Edit</Button>
-              <Button variant="outline-danger" onClick={handleDelete(_id)} >Delete</Button>
+              <Button variant="outline-danger" onClick={() => dispatch(delUser(_id), navigate('/human-resource/candidates'))} >Delete</Button>
 
             </th>
           </tr>
