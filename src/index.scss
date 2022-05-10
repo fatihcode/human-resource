@@ -9,6 +9,29 @@ th {
   }
 }
 
+
+
+
+.accordion-header {
+  font-family: "Roboto Slab", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.accordion-item:nth-of-type(odd) {
+  background-color: #F2F2F2;
+}
+
+.accordion-collapse {
+  background-color: #fff;
+}
+
+.accordion-button {
+  background-color: transparent !important;
+  font-weight: bold;
+}
+
+
+
+
 .card-caption {
   display: flex;
   position: relative;

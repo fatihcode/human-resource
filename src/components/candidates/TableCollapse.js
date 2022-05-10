@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getUsers } from '../../store/action'
-import { FormControl, Table, Spinner, Container, Button, Pagination } from 'react-bootstrap';
+import { FormControl, Table, Spinner, Container, Button, Collapse } from 'react-bootstrap';
 import Register from './Register';
 import Detail from './Detail';
 
-export default function Candidates() {
+export default function TableCollapse() {
+
+	const [open, setOpen] = useState(false);
 
 	const dispatch = useDispatch()
 
@@ -13,10 +15,14 @@ export default function Candidates() {
 
 	const [registerShow, setRegisterShow] = useState(false);
 	const [detailShow, setDetailShow] = useState(false);
+
 	const [search, setSearch] = useState("")
-	const [user, setUser] = useState({})
+
 	const state = useSelector(state => state)
+
 	const { candidates, error, loading } = state
+
+	const [user, setUser] = useState({})
 
 	const filterCandidates = candidates.filter(item => item.name.toLowerCase().includes(search.toLowerCase()) || item.phone.toLowerCase().includes(search.toLowerCase()))
 
@@ -63,40 +69,52 @@ export default function Candidates() {
 									</th>
 								</tr>
 								: filterCandidates.map((item, i) => (
-									<tr key={i}>
-										<th>{i + 1}</th>
-										<td>{item.name}</td>
-										<td>{item.phone}</td>
-										<th>
+									<>
+										<tr key={i} onClick={() => setOpen(!open)}>
+											<th>{i + 1}</th>
+											<td>{item.name}</td>
+											<td>{item.phone}</td>
+											<th>
 
-											<Button size='sm' variant='primary' onClick={() => { setDetailShow(true); setUser(item) }}>Detail</Button>
-										</th>
-									</tr>
+												<Button size='sm' variant='primary' onClick={() => { setDetailShow(true); setUser(item) }}>Detail</Button>
+											</th>
+										</tr>
+										<tr>
+											<td colSpan={4}>
+												<Collapse in={open}>
+													<div id="example-collapse-text">
+														<Table>
+															<tbody>
+																<tr>
+																	<th>Email:</th>
+																	<td><a href={"mailto:" + item.email}>{item.email}</a> </td>
+																</tr>
+													
+																<tr>
+																	<th>Address:</th>
+																	<td>{item.address}</td>
+																</tr>
+																<tr>
+																	<th>Web Site:</th>
+																	<td> <a href={"http://" + item.website} target="_blank" >{item.website}</a> </td>
+																</tr>
+																<tr>
+																	<th>Company:</th>
+																	<td>{item.company}</td>
+																</tr>
+
+															</tbody>
+														</Table>
+													</div>
+												</Collapse>
+											</td>
+										</tr>
+									</>
 								))
 						}
 					</tbody>
 
 				</Table>
-
-				<Pagination className='justify-content-center'>
-					<Pagination.First />
-					<Pagination.Prev />
-
-					<Pagination.Item active>{1}</Pagination.Item>
-					<Pagination.Ellipsis />
-
-					<Pagination.Item>{10}</Pagination.Item>
-					<Pagination.Item>{11}</Pagination.Item>
-					<Pagination.Item>{12}</Pagination.Item>
-					<Pagination.Item>{13}</Pagination.Item>
-					<Pagination.Item>{14}</Pagination.Item>
-
-					<Pagination.Ellipsis />
-					<Pagination.Item>{20}</Pagination.Item>
-
-					<Pagination.Next />
-					<Pagination.Last />
-				</Pagination>
 
 				<Register show={registerShow} onHide={() => setRegisterShow(false)} />
 				<Detail show={detailShow} onHide={() => setDetailShow(false)} user={user} />

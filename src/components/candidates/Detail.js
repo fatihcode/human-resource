@@ -1,74 +1,65 @@
 import React, { useState } from 'react'
-import { Button, CloseButton, Table } from 'react-bootstrap';
+import { Button, CloseButton, Table, Modal } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate, useParams } from 'react-router';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 import { delUser } from '../../store/action'
-
 import Register from './Register';
 
+export default function Detail(props) {
 
-export default function Detail() {
+   const dispatch = useDispatch()
+   const navigate = useNavigate();
+   const [editShow, setEditShow] = useState(false);
 
-  const dispatch = useDispatch()
-  const navigate = useNavigate();
-  const persons = useSelector(state => state.candidates)
-  const [modalShow, setModalShow] = useState(false);
-  let param = useParams()
+   const { _id, name, email, address, phone, website, company } = props.user
 
-  const user = persons.find(item => item._id === param.id)
+   console.log(props)
 
-  const { _id, name, email, address, phone, website, company } = user
+   return (
+      <Modal {...props} size="md" aria-labelledby="contained-modal-title-vcenter" centered >
 
-  return (
+         <Modal.Header closeButton>
+            <Modal.Title id="contained-modal-title-vcenter">
+               {name?.toUpperCase()}
+            </Modal.Title>
+         </Modal.Header>
 
-    <div className="portfolio-modal mt-5">
+         <Modal.Body className="m-4" >
+            <Table>
+               <tbody>
+                  <tr>
+                     <th>Email:</th>
+                     <td><a href={"mailto:" + email}>{email}</a> </td>
+                  </tr>
+                  <tr>
+                     <th>Phone:</th>
+                     <td><a href={"tel:" + phone}>{phone}</a></td>
+                  </tr>
+                  <tr>
+                     <th>Address:</th>
+                     <td>{address}</td>
+                  </tr>
+                  <tr>
+                     <th>Web Site:</th>
+                     <td> <a href={"http://" + website} target="_blank" >{website}</a> </td>
+                  </tr>
+                  <tr>
+                     <th>Company:</th>
+                     <td>{company}</td>
+                  </tr>
 
-      <div className="card-caption">
-        <h1 className="text-uppercase">{name}</h1>
-        <div className="close"> <Link to="/human-resource/candidates"><CloseButton /></Link></div>
-      </div>
+               </tbody>
+            </Table>
+         </Modal.Body>
 
-      <Table>
-        <tbody>
-          <tr>
-            <th>Email:</th>
-            <td><a href={"mailto:" + email}>{email}</a> </td>
-          </tr>
-          <tr>
-            <th>Phone:</th>
-            <td><a href={"tel:" + phone}>{phone}</a></td>
-          </tr>
-          <tr>
-            <th>Address:</th>
-            <td>{address}</td>
-          </tr>
-          <tr>
-            <th>Web Site:</th>
-            <td> <a href={"http://" + website} target="_blank" >{website}</a> </td>
-          </tr>
-          <tr>
-            <th>Company:</th>
-            <td>{company}</td>
-          </tr>
-          <tr>
-            <th colSpan={2} >
+         <Modal.Footer>
+            <Button variant="outline-info mx-3" onClick={() => (setEditShow(true))}>Edit</Button>
+            <Button variant="outline-danger" onClick={() => dispatch(delUser(_id), props.onHide())} >Delete</Button>
+         </Modal.Footer>
 
-              <Button variant="outline-info mx-3" onClick={() => setModalShow(true)}>Edit</Button>
+         <Register show={editShow} onHide={() => setEditShow(false)} user={props.user} />
 
-              <Button variant="outline-danger" onClick={() => dispatch(delUser(_id), navigate('/human-resource/candidates'))} >Delete</Button>
-              
-              <Register show={modalShow} onHide={() => setModalShow(false)} user={user}/>
-
-          
-
-              
-
-            </th>
-          </tr>
-        </tbody>
-      </Table>
-
-    </div>
-  )
+      </Modal>
+   );
 }
+

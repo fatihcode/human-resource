@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Button, Col, Form, Row, Modal } from 'react-bootstrap';
+import { Button, Form, Modal } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { postUser, updateUser } from '../../store/action'
 
@@ -28,6 +28,7 @@ export default function Register(props) {
    if (sending) {
       props.onHide()
    }
+   // console.log(props);
    return (
       <Modal {...props} size="md" backdrop="static" aria-labelledby="contained-modal-title-vcenter" centered >
 
@@ -37,13 +38,13 @@ export default function Register(props) {
             </Modal.Title>
          </Modal.Header>
 
-         <Modal.Body>
+         <Modal.Body className="m-4">
 
-            <Form className="m-4" noValidate validated={validated} onSubmit={handleSubmit}>
+            <Form noValidate validated={validated} onSubmit={handleSubmit}>
 
                <Form.Group className="mb-3" controlId="name">
                   <Form.Label>Name</Form.Label>
-                  <Form.Control onChange={(e) => setFormData({ ...formData, name: e.target.value })} type="text" placeholder="" value={formData.name} required />
+                  <Form.Control onChange={(e) => setFormData({ ...formData, name: e.target.value })} type="text" placeholder="" value={formData.name} required autoFocus/>
                </Form.Group>
 
                <Form.Group className="mb-3" controlId="phone">

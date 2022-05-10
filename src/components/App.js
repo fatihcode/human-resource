@@ -5,8 +5,10 @@ import Contact from './contact/Contact';
 import Header from './home/Header';
 import Candidates from './candidates/Candidates';
 import Footer from './home/Footer';
-import Register from './candidates/Register';
 import Signin from './auth/Signin';
+import Users from './candidates/Users';
+import TableCollapse from './candidates/TableCollapse';
+import Col from './candidates/Col';
 
 
 export default function App() {
@@ -19,8 +21,10 @@ export default function App() {
         <Route path="human-resource/candidates/*" element={<Candidates />} />
         <Route path="human-resource/aboutus" element={<About />} />
         <Route path="human-resource/contact" element={<Contact />} />
-        <Route path="human-resource/form" element={<Register />} />
         <Route path="human-resource/signin" element={<Signin />} />
+        <Route path="human-resource/form" element={<Users />} />
+        <Route path="human-resource/col" element={<Col />} />
+        <Route path="human-resource/table" element={<TableCollapse />} />
       </Routes>
 
       <Footer />
