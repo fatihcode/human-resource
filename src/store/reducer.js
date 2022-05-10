@@ -42,6 +42,14 @@ export default (state = INITIAL_STATE, { type, payload }) => {
 		//--------------------------------------------------------------
 
 
+		case "UPDATE_USER_PENDING":
+			return { ...state, sending: true }
+
+		case "UPDATE_USER_FULFILLED":
+			return { ...state, candidates: state.candidates.map(item => item._id === payload.data._id ? payload.data : item), sending: false }
+
+		case "UPDATE_USER_REJECTED":
+			return { ...state, error: payload.data.errors.message, sending: false }
 
 
 		//--------------------------------------------------------------

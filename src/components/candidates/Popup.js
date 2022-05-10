@@ -1,24 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Button, CloseButton, Table, Modal } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router';
 import { delUser } from '../../store/action'
+import Register from './Register';
 
-export default function Popup({ props, id="6253642403d48556eea63174" }) {
+export default function Popup(props) {
 
    const dispatch = useDispatch()
    const navigate = useNavigate();
-   const persons = useSelector(state => state.candidates)
+   const [modalShow, setModalShow] = useState(false);
 
-   const user = persons.find(item => item._id === id)
-
-   const { _id, name, email, address, phone, website, company } = user
+   const { _id, name, email, address, phone, website, company } = props.user
 
    return (
       <Modal {...props} size="lg" aria-labelledby="contained-modal-title-vcenter" centered >
          <Modal.Header closeButton>
             <Modal.Title id="contained-modal-title-vcenter">
-            {name}
+               {name}
             </Modal.Title>
          </Modal.Header>
 
@@ -48,8 +47,10 @@ export default function Popup({ props, id="6253642403d48556eea63174" }) {
                   <tr>
                      <th colSpan={2} >
 
-                        <Button variant="outline-info mx-3" >Edit</Button>
+                        <Button variant="outline-info mx-3" onClick={() => setModalShow(true)}>Edit</Button>
+
                         <Button variant="outline-danger" onClick={() => dispatch(delUser(_id), navigate('/human-resource/candidates'))} >Delete</Button>
+                        <Register show={modalShow} onHide={() => setModalShow(false)} user={props.user}/>
 
                      </th>
                   </tr>

@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getUsers } from '../../store/action'
-import { FormControl, Table, Spinner, Container,Button } from 'react-bootstrap';
+import { FormControl, Table, Spinner, Container, Button } from 'react-bootstrap';
 import Detail from './Detail';
 import { Routes, Route, NavLink } from 'react-router-dom'
 import Register from './Register';
-
+import Popup from './Popup';
 
 export default function Candidates() {
 
@@ -13,16 +13,19 @@ export default function Candidates() {
 
 	useEffect(() => dispatch(getUsers()), [])
 
-	const state = useSelector(state => state)
-
 	const [modalShow, setModalShow] = useState(false);
+	const [modalShow1, setModalShow1] = useState(false);
 
-	const [value, setValue] = useState("")
+	const [search, setSearch] = useState("")
+
+	const state = useSelector(state => state)
 
 	const { candidates, error, loading } = state
 
-	const filterCandidates = candidates.filter(item => item.name.toLowerCase().includes(value.toLowerCase()) || item.phone.toLowerCase().includes(value.toLowerCase()))
+	const [user, setUser] = useState({})
 
+	const filterCandidates = candidates.filter(item => item.name.toLowerCase().includes(search.toLowerCase()) || item.phone.toLowerCase().includes(search.toLowerCase()))
+console.log(user);
 	return (
 		<section className="page-section">
 
@@ -34,12 +37,12 @@ export default function Candidates() {
 				</div>
 				<div className="text-end">
 
-				<Button variant="primary" onClick={() => setModalShow(true)}>
-					Register Form
-				</Button>
+					<Button variant="primary" onClick={() => setModalShow(true)}>
+						Candidate Register
+					</Button>
 				</div>
 
-				<FormControl size="lg" onChange={(e) => setValue(e.target.value)} type="search" placeholder="Search" aria-label="Search" />
+				<FormControl size="lg" onChange={(e) => setSearch(e.target.value)} type="search" placeholder="Search" aria-label="Search" />
 
 				<Table striped bordered hover>
 
@@ -71,11 +74,13 @@ export default function Candidates() {
 										<td>{item.name}</td>
 										<td>{item.phone}</td>
 										<th>
-											<NavLink
+											{/* <NavLink
 												to={"detail/" + item._id}
 												type="button"
 												className={({ isActive }) => isActive ? "btn btn-sm btn-outline-primary" : "btn btn-sm btn-primary"}
-											>Detail</NavLink>
+											>Detail</NavLink> */}
+
+											<Button size='sm' variant='primary' onClick={() =>{setModalShow1(true); setUser(item)}}>Detail</Button>
 										</th>
 									</tr>
 								))
@@ -84,12 +89,12 @@ export default function Candidates() {
 
 				</Table>
 
-				<Routes>
-					<Route path="detail/:id" element={<Detail show={modalShow} onHide={() => setModalShow(false)}/>} />
-				</Routes>
+				{/* <Routes>
+					<Route path="detail/:id" element={<Detail onHide={() => setModalShow(false)} />} />
+				</Routes> */}
 
-				<Register show={modalShow} onHide={() => setModalShow(false)}/>
-
+				<Register show={modalShow} onHide={() => setModalShow(false)} />
+				<Popup show={modalShow1} onHide={() => setModalShow1(false)} user={user} />
 
 			</Container>
 		</section>

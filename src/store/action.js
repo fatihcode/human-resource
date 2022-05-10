@@ -36,6 +36,14 @@ export function postUser(user) {
 }
 
 
+export function updateUser(user) {
+	return dispatch => {
+		dispatch({
+			type: "UPDATE_USER",
+			payload: API.put(`/${user._id}`,user)
+		})
+	}
+}
 
 
 export function postReview(payload) {

@@ -1,25 +1,27 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Button, CloseButton, Table } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router';
 import { Link } from 'react-router-dom';
 import { delUser } from '../../store/action'
 
+import Register from './Register';
+
+
 export default function Detail() {
 
   const dispatch = useDispatch()
   const navigate = useNavigate();
   const persons = useSelector(state => state.candidates)
-
+  const [modalShow, setModalShow] = useState(false);
   let param = useParams()
 
   const user = persons.find(item => item._id === param.id)
 
   const { _id, name, email, address, phone, website, company } = user
 
-
   return (
-    
+
     <div className="portfolio-modal mt-5">
 
       <div className="card-caption">
@@ -52,8 +54,15 @@ export default function Detail() {
           <tr>
             <th colSpan={2} >
 
-              <Button variant="outline-info mx-3" >Edit</Button>
+              <Button variant="outline-info mx-3" onClick={() => setModalShow(true)}>Edit</Button>
+
               <Button variant="outline-danger" onClick={() => dispatch(delUser(_id), navigate('/human-resource/candidates'))} >Delete</Button>
+              
+              <Register show={modalShow} onHide={() => setModalShow(false)} user={user}/>
+
+          
+
+              
 
             </th>
           </tr>
