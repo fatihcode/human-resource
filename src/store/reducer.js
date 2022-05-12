@@ -1,4 +1,3 @@
-import { Action } from "history"
 import { brand, review, slideItem, team, aboutItem } from "./data"
 
 const INITIAL_STATE = {
@@ -63,6 +62,10 @@ export default (state = INITIAL_STATE, { type, payload }) => {
 
 		case "POST_REVIEW":
 			return { ...state, review: [payload, ...state.review] }
+
+
+		//--------------------------------------------------------------
+
 
 		default:
 			return state

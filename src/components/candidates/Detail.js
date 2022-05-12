@@ -1,14 +1,12 @@
 import React, { useState } from 'react'
-import { Button, CloseButton, Table, Modal } from 'react-bootstrap';
-import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router';
+import { Button, Table, Modal } from 'react-bootstrap';
+import { useDispatch } from 'react-redux';
 import { delUser } from '../../store/action'
 import Register from './Register';
 
 export default function Detail(props) {
 
    const dispatch = useDispatch()
-   const navigate = useNavigate();
    const [editShow, setEditShow] = useState(false);
 
    const { _id, name, email, address, phone, website, company } = props.user
@@ -62,4 +60,3 @@ export default function Detail(props) {
       </Modal>
    );
 }
-

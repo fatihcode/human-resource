@@ -29,14 +29,11 @@ export default function Candidates() {
 					<h2 className="section-heading text-uppercase">Candidates</h2>
 					<h3 className="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
 				</div>
-				<div className="text-end">
 
-					<Button variant="primary" onClick={() => setRegisterShow(true)}>
-						Candidate Register
-					</Button>
+				<div className="d-flex">
+					<FormControl onChange={(e) => setSearch(e.target.value)} type="search" placeholder="Search" aria-label="Search" />
+					<Button variant="primary" onClick={() => setRegisterShow(true)}>Register</Button>
 				</div>
-
-				<FormControl size="lg" onChange={(e) => setSearch(e.target.value)} type="search" placeholder="Search" aria-label="Search" />
 
 				<Table striped bordered hover>
 
@@ -68,7 +65,6 @@ export default function Candidates() {
 										<td>{item.name}</td>
 										<td>{item.phone}</td>
 										<th>
-
 											<Button size='sm' variant='primary' onClick={() => { setDetailShow(true); setUser(item) }}>Detail</Button>
 										</th>
 									</tr>
@@ -83,16 +79,12 @@ export default function Candidates() {
 					<Pagination.Prev />
 
 					<Pagination.Item active>{1}</Pagination.Item>
-					<Pagination.Ellipsis />
+					{/* <Pagination.Ellipsis /> */}
 
-					<Pagination.Item>{10}</Pagination.Item>
-					<Pagination.Item>{11}</Pagination.Item>
-					<Pagination.Item>{12}</Pagination.Item>
-					<Pagination.Item>{13}</Pagination.Item>
-					<Pagination.Item>{14}</Pagination.Item>
+					<Pagination.Item>{2}</Pagination.Item>
+					<Pagination.Item>{3}</Pagination.Item>
 
-					<Pagination.Ellipsis />
-					<Pagination.Item>{20}</Pagination.Item>
+					{/* <Pagination.Ellipsis /> */}
 
 					<Pagination.Next />
 					<Pagination.Last />
@@ -105,6 +97,3 @@ export default function Candidates() {
 		</section>
 	)
 }
-
-
-

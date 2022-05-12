@@ -1,6 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;300;400;700&display=swap');
 
+html {
+  scrollbar-gutter: stable both-edges;
+  // scrollbar-gutter: stable;
+}
+
+
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.page-section {
+  flex: 1; 
+}
+
+
+
+
 th {
   text-align: center !important;
 

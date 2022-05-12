@@ -7,20 +7,13 @@ import { delUser } from '../../store/action'
 
 export default function Users(props) {
 
-	const [editShow, setEditShow] = useState(false);
-
 	const dispatch = useDispatch()
-
 	useEffect(() => dispatch(getUsers()), [])
-
+	const [editShow, setEditShow] = useState(false);
 	const [registerShow, setRegisterShow] = useState(false);
-
 	const [search, setSearch] = useState("")
-
 	const state = useSelector(state => state)
-
 	const { candidates, error, loading } = state
-
 	const [user, setUser] = useState({})
 
 	const filterCandidates = candidates.filter(item => item.name.toLowerCase().includes(search.toLowerCase()) || item.phone.toLowerCase().includes(search.toLowerCase()))
@@ -36,60 +29,55 @@ export default function Users(props) {
 				</div>
 
 				<div className="d-flex">
-
 					<FormControl onChange={(e) => setSearch(e.target.value)} type="search" placeholder="Search" aria-label="Search" />
-					<Button variant="primary" onClick={() => setRegisterShow(true)}>
-						Register
-					</Button>
+					<Button variant="primary" onClick={() => setRegisterShow(true)}>Register</Button>
 				</div>
 
-
 				<Accordion defaultActiveKey="0" flush>
-				
-					{
-						loading
-							? <div className="text-center"><Spinner animation="border" /></div>
-							: error
-								? <div className="text-center">{error}</div>
-								: filterCandidates.map((item, i) => (
-									<Accordion.Item eventKey={i}>
 
-										<Accordion.Header>
-											<span>{i + 1}.{ }</span>
-											<span>{item.name}</span>
-										</Accordion.Header>
+					{loading
+						? <div className="text-center"><Spinner animation="border" /></div>
+						: error
+							? <div className="text-center">{error}</div>
+							: filterCandidates.map((item, i) => (
+								<Accordion.Item eventKey={i} key={i}>
 
-										<Accordion.Body>
-											<Table>
-												<tbody>
-													<tr>
-														<th>Email:</th>
-														<td><a href={"mailto:" + item.email}>{item.email}</a> </td>
-													</tr>
+									<Accordion.Header>
+										<span className="mx-1">{i + 1}.</span>
+										<span>{item.name}</span>
+									</Accordion.Header>
 
-													<tr>
-														<th>Address:</th>
-														<td>{item.address}</td>
-													</tr>
-													<tr>
-														<th>Web Site:</th>
-														<td> <a href={"http://" + item.website} target="_blank" >{item.website}</a> </td>
-													</tr>
-													<tr>
-														<th>Company:</th>
-														<td>{item.company}</td>
-													</tr>
+									<Accordion.Body>
+										<Table>
+											<tbody>
+												<tr>
+													<th>Email:</th>
+													<td><a href={"mailto:" + item.email}>{item.email}</a> </td>
+												</tr>
 
-												</tbody>
-											</Table>
-											<div className="text-end">
-												<Button size='sm' variant="outline-info mx-3" onClick={() => (setUser(item), setEditShow(true))}>Edit</Button>
-												<Button size='sm' variant="outline-danger" onClick={() => dispatch(delUser(item._id), props.onHide())} >Delete</Button>
-											</div>
-										</Accordion.Body>
-									</Accordion.Item>
+												<tr>
+													<th>Address:</th>
+													<td>{item.address}</td>
+												</tr>
+												<tr>
+													<th>Web Site:</th>
+													<td> <a href={"http://" + item.website} target="_blank" >{item.website}</a> </td>
+												</tr>
+												<tr>
+													<th>Company:</th>
+													<td>{item.company}</td>
+												</tr>
 
-								))}
+											</tbody>
+										</Table>
+										<div className="text-end">
+											<Button size='sm' variant="info mx-3" onClick={() => (setUser(item), setEditShow(true))}>Edit</Button>
+											<Button size='sm' variant="danger" onClick={() => dispatch(delUser(item._id), props.onHide())} >Delete</Button>
+										</div>
+									</Accordion.Body>
+								</Accordion.Item>
+
+							))}
 				</Accordion>
 
 
@@ -101,6 +89,3 @@ export default function Users(props) {
 		</section>
 	)
 }
-
-
-
