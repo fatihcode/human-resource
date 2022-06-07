@@ -89,7 +89,6 @@ export default function TableCollapse() {
 																	<th>Email:</th>
 																	<td><a href={"mailto:" + item.email}>{item.email}</a> </td>
 																</tr>
-													
 																<tr>
 																	<th>Address:</th>
 																	<td>{item.address}</td>

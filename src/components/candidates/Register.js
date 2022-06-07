@@ -29,6 +29,7 @@ export default function Register(props) {
       props.onHide()
    }
    // console.log(props);
+   
    return (
       <Modal {...props} size="md" backdrop="static" aria-labelledby="contained-modal-title-vcenter" centered >
 

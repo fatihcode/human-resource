@@ -5,6 +5,7 @@ import Contact from './contact/Contact';
 import Header from './home/Header';
 import Candidates from './candidates/Candidates';
 import Footer from './home/Footer';
+
 import Signin from './auth/Signin';
 import Users from './candidates/Users';
 import TableCollapse from './candidates/TableCollapse';

@@ -7,8 +7,8 @@ import App from './components/App';
 import { Provider } from 'react-redux'
 import { createStore, applyMiddleware } from 'redux'
 import reducer from './store/reducer'
-import promise from 'redux-promise-middleware'
 import thunk from 'redux-thunk'
+import promise from 'redux-promise-middleware'
 import logger from 'redux-logger'
 import { composeWithDevTools } from '@redux-devtools/extension'
 

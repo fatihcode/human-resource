@@ -4,6 +4,8 @@ import { useDispatch } from 'react-redux';
 import { delUser } from '../../store/action'
 import Register from './Register';
 
+
+
 export default function Detail(props) {
 
    const dispatch = useDispatch()
@@ -52,7 +54,7 @@ export default function Detail(props) {
 
          <Modal.Footer>
             <Button variant="outline-info mx-3" onClick={() => (setEditShow(true))}>Edit</Button>
-            <Button variant="outline-danger" onClick={() => dispatch(delUser(_id), props.onHide())} >Delete</Button>
+            <Button variant="outline-danger" onClick={() => dispatch(delUser(_id), props.onHide())}>Delete</Button>
          </Modal.Footer>
 
          <Register show={editShow} onHide={() => setEditShow(false)} user={props.user} />
